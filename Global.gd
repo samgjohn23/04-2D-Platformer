@@ -1,5 +1,11 @@
 extends Node
 
+var score = 0
+var lives = 3
+var level = 1
+var health = 100
+var max_health = 100
+
 var fade = null
 var fade_speed = 0.015
 
@@ -7,6 +13,18 @@ var fade_in = false
 var fade_out = ""
 
 var death_zone = 1000
+
+func increase_score(s):
+	score += s
+	
+func decrease_health(h):
+	health -= h 
+	
+func decrease_lives(l):
+	lives -= l
+	health = max_health
+	if lives <= 0:
+		get_tree().change_scene("res://Levels/Game_Over.tscn")
 
 func _physics_process(_delta):
 	if fade == null:

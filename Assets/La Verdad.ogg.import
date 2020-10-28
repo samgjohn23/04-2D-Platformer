@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/La Verdad.ogg-a3a00069d127b9f056bd1ff7fd43b05b.oggstr"
+
+[deps]
+
+source_file="res://Assets/La Verdad.ogg"
+dest_files=[ "res://.import/La Verdad.ogg-a3a00069d127b9f056bd1ff7fd43b05b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

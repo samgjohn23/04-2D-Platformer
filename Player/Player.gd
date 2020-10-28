@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var SM = $StateMachine
+onready var VP = get_viewport_rect()
 
 var velocity = Vector2.ZERO
 var jump_power = Vector2.ZERO
@@ -19,18 +20,21 @@ export var max_leap = 1000
 
 var moving = false
 var is_jumping = false
-var double_jumped = false
 
+
+func _ready():
+	pass
 
 
 func _physics_process(_delta):
 	velocity.x = clamp(velocity.x,-max_move,max_move)
-		
+	
 	if direction < 0 and not $AnimatedSprite.flip_h: $AnimatedSprite.flip_h = true
 	if direction > 0 and $AnimatedSprite.flip_h: $AnimatedSprite.flip_h = false
 	
-	if is_on_floor():
-		double_jumped = false
+	if position.y > Global.death_zone:
+		queue_free()
+		
 
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
@@ -50,23 +54,6 @@ func set_animation(anim):
 	if $AnimatedSprite.animation == anim: return
 	if $AnimatedSprite.frames.has_animation(anim): $AnimatedSprite.play(anim)
 	else: $AnimatedSprite.play()
-
-func is_on_floor():
-	var fl = $Floor.get_children()
-	for f in fl:
-		if f.is_colliding():
-			return true
-	return false
-
-func is_on_right_wall():
-	if $Wall/Right.is_colliding():
-		return true
-	return false
-
-func is_on_left_wall():
-	if $Wall/Right.is_colliding():
-		return true
-	return false
 
 func die():
 	queue_free()

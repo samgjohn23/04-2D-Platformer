@@ -64,3 +64,14 @@ func execute_fade_out(target):
 func _unhandled_input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
+		
+func _on_Portal_entered(body):
+	if body.name == "Player":
+		if name == "Exit_to_2":
+			Global.level = 2
+			get_tree().change_scene("res://Levels/Level2.tscn")
+		if name == "Exit_to_3":
+			Global.level = 3
+			get_tree().change_scene("res://Levels/Game_Over2.tscn")
+
+	

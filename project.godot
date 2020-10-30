@@ -18,7 +18,6 @@ _global_script_class_icons={
 config/name="Levels"
 run/main_scene="res://Levels/Level1.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
 
 [autoload]
 

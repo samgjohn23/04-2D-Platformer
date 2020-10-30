@@ -37,7 +37,7 @@ func _physics_process(_delta):
 	if position.y > Global.death_zone:
 		queue_free()
 		
-
+	
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		return true
@@ -65,3 +65,4 @@ func do_damage(d):
 func die():
 	Global.decrease_lives(1)
 	queue_free()
+

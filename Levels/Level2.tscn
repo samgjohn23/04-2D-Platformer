@@ -28,6 +28,20 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "medieval_tilesheet.png 1"
+1/texture = ExtResource( 11 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 770, 140, 140, 70 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 140, 140, 0, 140, 70, 0 )
@@ -235,17 +249,18 @@ points = PoolVector2Array( 140, 70, 0, 70, 0, 0, 140, 0 )
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
-format = 1
-tile_data = PoolIntArray( 16, 0, 0, 17, 0, 0, 19, 0, 0, 65552, 0, 0, 65553, 0, 0, 65555, 0, 0, 131088, 0, 0, 131090, 0, 0, 131091, 0, 0, 196624, 0, 0, 196626, 0, 0, 196627, 0, 0, 262160, 0, 0, 262162, 0, 0, 262163, 0, 0, 327696, 0, 0, 327697, 0, 0, 327699, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0 )
-
-[node name="back" type="Sprite" parent="Background"]
-position = Vector2( 519.361, 543.622 )
+[node name="back" type="Sprite" parent="."]
+position = Vector2( 519.361, 542.675 )
 scale = Vector2( 2.74695, 2.74695 )
 texture = ExtResource( 7 )
 
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 16, 0, 0, 17, 0, 0, 19, 0, 0, 65552, 0, 0, 65553, 0, 0, 65555, 0, 0, 131088, 0, 0, 131090, 0, 0, 131091, 0, 0, 196610, 1, 0, 196611, 1, 0, 196624, 0, 0, 196626, 0, 0, 196627, 0, 0, 262146, 0, 0, 262147, 0, 0, 262160, 0, 0, 262162, 0, 0, 262163, 0, 0, 327682, 0, 0, 327683, 0, 0, 327696, 0, 0, 327697, 0, 0, 327699, 0, 0, 393218, 0, 0, 393219, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 458754, 0, 0, 458755, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0 )
+
 [node name="Spawn" type="Node2D" parent="."]
+position = Vector2( -34.047, -147.814 )
 
 [node name="Sprite" type="Sprite" parent="Spawn"]
 position = Vector2( 246.646, 479.751 )
@@ -254,7 +269,7 @@ texture = ExtResource( 10 )
 script = ExtResource( 6 )
 
 [node name="Exit_to_3" type="Area2D" parent="."]
-position = Vector2( -2735.93, -285.187 )
+position = Vector2( -2740.12, -278.2 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -274,7 +289,7 @@ polygon = PoolVector2Array( 12, -48.7, 23, -35.7, 23, -32.4, 25, -27.9, 25, 27.1
 script = ExtResource( 2 )
 
 [node name="Backup_Camera" type="Camera2D" parent="Player_Container"]
-position = Vector2( 247.744, 492.542 )
+position = Vector2( 211.206, 340.576 )
 limit_left = 0
 limit_right = 3760
 limit_bottom = 600
@@ -315,7 +330,7 @@ limit_bottom = 550
 position = Vector2( 96.6243, 347.773 )
 
 [node name="Coin2" parent="Coin_Container" instance=ExtResource( 8 )]
-position = Vector2( 351.522, 353.486 )
+position = Vector2( 352.353, 354.316 )
 
 [node name="Coin3" parent="Coin_Container" instance=ExtResource( 8 )]
 position = Vector2( 606.8, 223.028 )
